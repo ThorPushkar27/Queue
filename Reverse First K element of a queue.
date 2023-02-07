@@ -1,5 +1,5 @@
-// Time Complexity = O(n-k)
-//Space Complexity = O(n-k)
+// Time Complexity = O(n)
+//Space Complexity = O(k)
 
 // Learnt- Queue ko bhi array ki tarah traverse kar sakte hain.
 
