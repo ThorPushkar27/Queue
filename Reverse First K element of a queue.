@@ -1,0 +1,26 @@
+// Time Complexity = O(n-k)
+//Space Complexity = O(n-k)
+
+// Learnt- Queue ko bhi array ki tarah traverse kar sakte hain.
+
+queue<int> modifyQueue(queue<int> q, int k) {
+    
+    stack<int>st;
+    int n = q.size();
+    while(q.size()>n-k ){
+        st.push(q.front());
+        q.pop();
+        
+    }
+    while(st.empty()==false){
+        q.push(st.top());
+        st.pop();
+    }
+    // Queue ko loop ke throgh process kar sakte hain.
+    for(int i =0; i< n-k; i++){
+        int temp = q.front();
+        q.pop();
+        q.push(temp);
+    }
+    return q;
+}
