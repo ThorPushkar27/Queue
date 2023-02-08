@@ -1,0 +1,33 @@
+// Time Complexity = O(n2)
+// Learnt - Circular cheezo ko kaise deal karte hain.
+
+
+class Solution {
+public:
+    int canCompleteCircuit(vector<int>& gas, vector<int>& cost) {
+        int n = gas.size();
+        int m = cost.size();
+        
+        
+        
+        for(int i =0;i<n;i++){
+            int j=i;
+            int count=0;
+            int petrol=0;
+            while(count<n){
+                petrol+=gas[j%n]-cost[j%n];  // Since we are going to circle...I mean backward so %
+                if(petrol<0){
+                    break;
+                }
+                count++;
+                j++;
+            }
+            if(count==n){
+                return i;
+            }
+            
+        }
+        return -1;
+        
+    }
+};
